@@ -1,17 +1,19 @@
 public class QuickSort implements SortInterface{
-    @Override
-    public int[] sort(int[] arr, int low, int high) {
+      @Override
+      public int[] sort(int[] array) {
+         return quickSort(array,0,array.length-1);
+      }
 
-    if(low<high) {
-        int p = partion(arr, low, high);
+      private int[] quickSort(int[] array, int low, int high) {
+        if(low<high) {
+            int p = partition(array, low, high);
+            quickSort(array, low, p-1);
+            quickSort(array, p+1, high);
+        }
+        return  array;
+     }
 
-        sort(arr, low, p-1);
-        sort(arr, p+1, high);
-    }
-    return  arr;
-    }
-
-    private int partion(int[] arr, int low, int high) {
+     private int partition(int[] arr, int low, int high) {
         int m = arr[low];
         int i = low+1;
         int j = high;
@@ -30,6 +32,4 @@ public class QuickSort implements SortInterface{
         arr[j] = m;
         return j;
     }
-
-
 }

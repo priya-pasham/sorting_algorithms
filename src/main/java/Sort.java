@@ -8,7 +8,7 @@ public class Sort {
             System.out.print(s+" ");
         }
         SortInterface sortElements = new QuickSort();
-        int[] sortedArray = sortElements.sort(unSortedArray,0,4);
+        int[] sortedArray = sortElements.sort(unSortedArray);
         System.out.println();
         System.out.print("Sorted Array - ");
         for (int s: sortedArray){
