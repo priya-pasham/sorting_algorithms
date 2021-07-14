@@ -7,8 +7,8 @@ public class Sort {
         for (int s: unSortedArray){
             System.out.print(s+" ");
         }
-        SortInterface sortElements = new QuickSort();
-        int[] sortedArray = sortElements.sort(unSortedArray);
+       SortContext sortContext =  new SortContext(new QuickSort(),unSortedArray);
+        int[] sortedArray = sortContext.sortArray();
         System.out.println();
         System.out.print("Sorted Array - ");
         for (int s: sortedArray){
